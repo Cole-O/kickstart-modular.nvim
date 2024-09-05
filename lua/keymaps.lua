@@ -1,3 +1,27 @@
+-- Go back to file system
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+
+-- Move line up and down
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- Half file jumps
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- Keeps cursor centered when using search
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Keep cut in copy board
+vim.keymap.set('x', '<leader>p', '"_dP')
+
+-- Don't want to press Q
+vim.keymap.set('n', 'Q', '<nop>')
+
+-- Replace current on current word
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
